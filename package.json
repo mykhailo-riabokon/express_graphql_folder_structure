@@ -1,0 +1,18 @@
+{
+  "name": "structure",
+  "version": "1.0.0",
+  "description": "Express + GraphQL structure",
+  "main": "src/server/index.js",
+  "author": "Mikhail Riabokon",
+  "scripts": {
+    "test-graphql": "babel-node ./src/server/graphql/schema.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "graphql": "^0.4.7"
+  },
+  "devDependencies": {
+    "mddir": "^1.0.9"
+  }
+}
