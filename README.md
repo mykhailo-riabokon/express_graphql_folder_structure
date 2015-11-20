@@ -6,57 +6,23 @@
     |-- package.json
     |-- ...
     |-- src
-        |-- ...
         |-- server
             |-- index.js
-            |-- ...
-            |-- graphql
-                |-- schema.js
-                |-- fields
-                |   |-- ...
-                |   |-- viewer
-                |       |-- index.js
-                |       |-- resolve.js
-                |       |-- type.js
-                |       |-- fields
-                |           |-- ...
-                |           |-- list
-                |               |-- index.js
-                |               |-- type.js
-                |-- mutations
-                    |-- ...
-```
-
-### The main idea is to split fields to separate folders, where:
-```
-// fields/fieldName/index.js
-...
-
-export default {
-  type,
-  resolve
-}
-```
-
-```
-// fields/fieldName/type.js
-...
-import NestedField from './fields/nestedField/index.js';
-
-export default new GraphQLObjectType({
-  name: 'MyType',
-  fields: () => ({
-    nestedField: NestedField 
-  })
-});
-```
-
-```
-// fields/fieldName/resolve.js
-...
-export default function () {
-  // resolve
-}
+            |-- middlewares
+                |-- graphql
+                    |-- schema.js
+                    |-- mutations
+                    |   |-- mutation.js
+                    |   |-- index.js
+                    |-- queries
+                    |   |-- index.js
+                    |   |-- viewer
+                    |       |-- index.js
+                    |       |-- queries
+                    |           |-- list
+                    |               |-- index.js
+                    |-- types
+                        |-- type.js
 ```
 
 ### An example of code in folders you can reach in this repository. 
